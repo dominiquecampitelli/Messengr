@@ -1,16 +1,14 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import "./App.css";
-import Join from "./components/Join/Join";
-import Chat from "./components/Chat/Chat";
+import AppRoutes from "./routes";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <Join />
-      <Chat />
-    </>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
