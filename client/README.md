@@ -1,8 +1,20 @@
-# React + Vite
+# Messengr
+## Chat em tempo real.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Focado em front-end. Interface desenvolvida em React.js, servidor desenvolvido em Node.js e Socket.io para comunicação entre cliente e servidor em tempo real.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## No terminal
+
+Para rodar a aplicação abra dois terminais ou divida o mesmo terminal e dê os seguintes comandos em sequência:
+
+### Terminal para rodar o React.js
+-   cd client
+-   yarn
+-   yarn start
+
+### Terminal para rodar o Node.js
+- cd server
+- yarn
+- yarn run nodemon
