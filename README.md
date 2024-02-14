@@ -20,4 +20,4 @@ Para rodar a aplicação abra dois terminais ou divida o mesmo terminal e dê os
 
 - cd server
 - yarn
-- yarn nodemon
+- yarn nodemon ou yarn run dev

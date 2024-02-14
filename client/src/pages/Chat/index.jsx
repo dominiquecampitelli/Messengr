@@ -57,7 +57,7 @@ export default function Chat({ socket }) {
       <div ref={bottomRef} />
       <input
         type="text"
-        ref={messageRef}
+        inputRef={messageRef}
         placeholder="Mensagem"
         onKeyDown={(e) => getEnterKey(e)}
       />

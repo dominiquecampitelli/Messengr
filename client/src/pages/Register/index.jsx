@@ -3,7 +3,7 @@ import io from "socket.io-client";
 
 // import { Container } from './styles';
 
-export default function Login({ setSocket }) {
+export default function Register({ setSocket }) {
   const usernameRef = useRef();
 
   const handleSubmit = async () => {
@@ -17,9 +17,11 @@ export default function Login({ setSocket }) {
 
   return (
     <div>
-      <h1>Vem papear você também</h1>
-      <input type="text" inputRef={usernameRef} placeholder="Nome de usuário" />
-      <button onClick={() => handleSubmit()}>Entrar</button>
+      <h1>Crie uma conta</h1>
+      <input type="text" placeholder="Nome" />
+      <input type="text" placeholder="E-mail" />
+      <input type="text" placeholder="Senha" />
+      <button onClick={() => handleSubmit()}>Criar</button>
     </div>
   );
 }
