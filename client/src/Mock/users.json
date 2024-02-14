@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Edgar",
+    "description": "A perfeição é a doença da nação!"
+  },
+  {
+    "id": 2,
+    "name": "Alicia",
+    "description": "Ocupado"
+  },
+  {
+    "id": 3,
+    "name": "Lívia",
+    "description": "Into a ruinous abyss with violent music."
+  },
+  {
+    "id": 4,
+    "name": "Nicolas",
+    "description": "Estou em reunião, mande somente mensagens."
+  },
+  {
+    "id": 5,
+    "name": "Rafael",
+    "description": "Workaholic"
+  }
+]
