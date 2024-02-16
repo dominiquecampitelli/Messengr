@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import Account from "../../mock/account.json";
+import Account from "../../Mock/account.json";
 
 import Container from "../../components/Container";
 import FormGrid from "../../components/FormGrid";
