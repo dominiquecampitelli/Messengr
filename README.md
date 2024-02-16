@@ -21,3 +21,10 @@ Para rodar a aplicação abra dois terminais ou divida o mesmo terminal e dê os
 - cd server
 - yarn
 - yarn nodemon
+
+---
+
+## Login
+
+E-mail: dominiquecamp@outlook.com
+Senha: 123456
