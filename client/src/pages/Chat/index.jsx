@@ -1,13 +1,62 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 // import { Container } from './styles';
 
 export default function Chat() {
+  const messageRef = useRef();
+  const bottomRef = useRef();
+  const [messageList, setMessageList] = useState([]);
+
+  /* useEffect(() => {
+    socketData.on("receive_message", (data) => {
+      setMessageList((current) => [...current, data]);
+    });
+
+    return () => socketData.off("receive_message");
+  }, [socketData]); */
+
+  useEffect(() => {
+    scrollDown();
+  }, [messageList]);
+
+  const handleSubmit = () => {
+    clearInput();
+    focusInput();
+  };
+
+  const clearInput = () => {
+    messageRef.current.value = "";
+  };
+
+  const focusInput = () => {
+    messageRef.current.focus();
+  };
+
+  const getEnterKey = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit();
+    }
+  };
+
+  const scrollDown = () => {
+    bottomRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div>
       <h1>Chat</h1>
-      <input type="text" placeholder="Mensagem" />
-      <button>Enviar</button>
+      {/* {messageList.map((message, i) => (
+        <p key={i}>
+          {message.author} : {message.text}
+        </p>
+      ))} */}
+      <div ref={bottomRef} />
+      <input
+        type="text"
+        placeholder="Mensagem"
+        onKeyDown={(e) => getEnterKey(e)}
+      />
+      <button onClick={() => handleSubmit()}>Enviar</button>
     </div>
   );
 }

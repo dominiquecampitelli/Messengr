@@ -9,7 +9,7 @@ import Logo from "../../assets/cloud.png";
 
 import { Headline, Title, Footerline } from "./styles";
 
-export default function Login() {
+export default function Register() {
   return (
     <Container>
       <FormGrid>
@@ -17,6 +17,14 @@ export default function Login() {
           <Title>Messengr</Title>
           <img src={Logo} alt="Logo" />
         </Headline>
+        <TextField
+          type="text"
+          color="secondary"
+          label="Nome"
+          variant="standard"
+          size="normal"
+          style={{ width: "20%", marginBottom: "1rem" }}
+        />
         <TextField
           type="text"
           color="secondary"
@@ -40,10 +48,10 @@ export default function Login() {
           style={{ width: "20%", marginBottom: "1rem" }}
           onClick={() => handleSubmit()}
         >
-          Entrar
+          Criar conta
         </Button>
-        <Link to={`/register`}>
-          <Footerline>Criar uma conta</Footerline>
+        <Link to={`/login`}>
+          <Footerline>Voltar para login</Footerline>
         </Link>
       </FormGrid>
     </Container>
