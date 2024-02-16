@@ -1,27 +1,59 @@
-import React, { useRef } from "react";
-import io from "socket.io-client";
+import React from "react";
+import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
-// import { Container } from './styles';
+import Container from "../../components/Container";
+import FormGrid from "../../components/FormGrid";
+import Logo from "../../assets/cloud.png";
 
-export default function Register({ setSocket }) {
-  const usernameRef = useRef();
+import { Headline, Title, Footerline } from "./styles";
 
-  const handleSubmit = async () => {
-    const username = usernameRef.current.value;
-
-    if (!username.trim()) return;
-    const socket = await io.connect("http://localhost:3001");
-    socket.emit("set_username", username);
-    setSocket(socket);
-  };
-
+export default function Register() {
   return (
-    <div>
-      <h1>Crie uma conta</h1>
-      <input type="text" placeholder="Nome" />
-      <input type="text" placeholder="E-mail" />
-      <input type="text" placeholder="Senha" />
-      <button onClick={() => handleSubmit()}>Criar</button>
-    </div>
+    <Container>
+      <FormGrid>
+        <Headline>
+          <Title>Messengr</Title>
+          <img src={Logo} alt="Logo" />
+        </Headline>
+        <TextField
+          type="text"
+          color="secondary"
+          label="Nome"
+          variant="standard"
+          size="normal"
+          style={{ width: "20%", marginBottom: "1rem" }}
+        />
+        <TextField
+          type="text"
+          color="secondary"
+          label="E-mail"
+          variant="standard"
+          size="normal"
+          style={{ width: "20%", marginBottom: "1rem" }}
+        />
+        <TextField
+          type="text"
+          color="secondary"
+          label="Senha"
+          variant="standard"
+          size="normal"
+          style={{ width: "20%", marginBottom: "3rem" }}
+        />
+        <Button
+          variant="contained"
+          size="medium"
+          color="secondary"
+          style={{ width: "20%", marginBottom: "1rem" }}
+          onClick={() => handleSubmit()}
+        >
+          Criar conta
+        </Button>
+        <Link to={`/login`}>
+          <Footerline>Voltar para login</Footerline>
+        </Link>
+      </FormGrid>
+    </Container>
   );
 }

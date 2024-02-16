@@ -3,14 +3,15 @@ import { BrowserRouter } from "react-router-dom";
 // import io from "socket.io-client";
 
 import AppRoutes from "./routes";
-import "./App.css";
+import GlobalStyle from "./styles/global";
 
 // const socket = io.connect("http://localhost:4000");
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes socket={socket} />
+      <AppRoutes />
+      <GlobalStyle />
     </BrowserRouter>
   );
 }

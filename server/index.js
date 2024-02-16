@@ -1,15 +1,15 @@
-const app = require("express")();
+const app = require("express");
 const server = require("http").createServer(app);
 const io = require("socket.io")(server, {
   cors: { origin: "http://localhost:5173" },
 });
 
-const PORT = 3001;
+const port = process.env.PORT || 4000;
 
 io.on("connection", (socket) => {
   console.log("conectado", socket.id);
 
-  socket.on("disconnect", (reason) => {
+  socket.on("disconnect", () => {
     console.log("Usuário desconectado!", socket.id);
   });
 
@@ -27,4 +27,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => console.log("Server running..."));
+server.listen(port, () => console.log(`Server running on port: ${port}`));

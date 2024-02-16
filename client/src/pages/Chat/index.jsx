@@ -2,29 +2,24 @@ import React, { useRef, useState, useEffect } from "react";
 
 // import { Container } from './styles';
 
-export default function Chat({ socketData }) {
-  console.log(socketData);
+export default function Chat() {
   const messageRef = useRef();
   const bottomRef = useRef();
   const [messageList, setMessageList] = useState([]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     socketData.on("receive_message", (data) => {
       setMessageList((current) => [...current, data]);
     });
 
     return () => socketData.off("receive_message");
-  }, [socketData]);
+  }, [socketData]); */
 
   useEffect(() => {
     scrollDown();
   }, [messageList]);
 
   const handleSubmit = () => {
-    const message = messageRef.current.value;
-
-    if (!message.trim()) return;
-    socketData.emit("message", message);
     clearInput();
     focusInput();
   };
@@ -50,15 +45,14 @@ export default function Chat({ socketData }) {
   return (
     <div>
       <h1>Chat</h1>
-      {messageList.map((message, i) => (
+      {/* {messageList.map((message, i) => (
         <p key={i}>
           {message.author} : {message.text}
         </p>
-      ))}
+      ))} */}
       <div ref={bottomRef} />
       <input
         type="text"
-        ref={messageRef}
         placeholder="Mensagem"
         onKeyDown={(e) => getEnterKey(e)}
       />
